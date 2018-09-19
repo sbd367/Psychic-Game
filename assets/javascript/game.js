@@ -8,6 +8,10 @@ var losses = 0;
 var guesses = 10;
 var guessesSofar = [];
 
+// function updateDOM(){
+//     var wins = document.getElementById('wins');
+// }
+
 console.log(myGuess);
 
 document.onkeypress = function(event){
@@ -25,6 +29,8 @@ document.onkeypress = function(event){
         alert('Game Over you guessed ' + wins + " correct out of " + losses);
         guesses = 10;
         losses = 0;
+        wins = 0;
+        guessesSofar = [];
     }
     document.getElementById('wins').innerHTML = "wins: " + wins;
     document.getElementById('losses').innerHTML = "losses: " + losses;
