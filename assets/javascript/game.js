@@ -8,9 +8,12 @@ var losses = 0;
 var guesses = 10;
 var guessesSofar = [];
 
-// function updateDOM(){
-//     var wins = document.getElementById('wins');
-// }
+function updateDOM(){
+    document.getElementById('wins').innerHTML = "wins: " + wins;
+    document.getElementById('losses').innerHTML = "losses: " + losses;
+    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
+    document.getElementById('guessSofar').innerHTML = "Guesses so far: " + guessesSofar;
+}
 
 console.log(myGuess);
 
@@ -32,10 +35,7 @@ document.onkeypress = function(event){
         wins = 0;
         guessesSofar = [];
     }
-    document.getElementById('wins').innerHTML = "wins: " + wins;
-    document.getElementById('losses').innerHTML = "losses: " + losses;
-    document.getElementById('guesses').innerHTML = "Guesses left: " + guesses;
-    document.getElementById('guessSofar').innerHTML = "Guesses so far: " + guessesSofar;
+    updateDOM();
 }
 if(guesses === 0){
     alert('Game Over you guessed ' + wins, " correct out of " + losses);
